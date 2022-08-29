@@ -18,21 +18,21 @@ public class ValidateBinarySearchTree {
         root3.right.left = new TreeNode(3);
         root3.right.right = new TreeNode(7);
 
-        System.out.println(isValidBST(root3));
+        System.out.println(isValidBST(root));
     }
 
     public static boolean isValidBST(TreeNode root) {
-        return check(root, null, null);
+        return isValidBST(root, null, null);
     }
 
-    public static boolean check(TreeNode root, Integer low, Integer high) {
+    public static boolean isValidBST(TreeNode root, Integer low, Integer high) {
         if (root == null) {
             return true;
         }
         if ((low != null && root.val <= low) || (high != null && root.val >= high)) {
             return false;
         }
-        return check(root.left, low, root.val) && check(root.right, root.val, high);
+        return isValidBST(root.left, low, root.val) && isValidBST(root.right, root.val, high);
     }
 
 }

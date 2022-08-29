@@ -16,12 +16,17 @@ public class CoinChange {
         Arrays.fill(checkVal, amount + 1);
         checkVal[0] = 0;
 
+
         for (int i = 1; i < amount + 1; i++) {
             for (int j = 0; j < coins.length; j++) {
                 if (coins[j] <= i) {
                     checkVal[i] = Math.min(checkVal[i], checkVal[i - coins[j]] + 1);
                 }
             }
+            for (int val : checkVal) {
+                System.out.print(val + ", ");
+            }
+            System.out.println(" ");
         }
 
         return checkVal[amount] > amount ? -1 : checkVal[amount];

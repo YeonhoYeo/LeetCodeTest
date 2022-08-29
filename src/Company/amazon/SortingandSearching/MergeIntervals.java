@@ -27,6 +27,7 @@ public class MergeIntervals {
             }
         }
         return al.toArray(new int[al.size()][2]);
+        //return al.toArray(al);
     }
 
 }

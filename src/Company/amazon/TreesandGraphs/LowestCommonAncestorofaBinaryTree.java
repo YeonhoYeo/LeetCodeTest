@@ -13,7 +13,7 @@ public class LowestCommonAncestorofaBinaryTree {
         root.left.right.left = new TreeNode(7);
         root.left.right.right = new TreeNode(4);
 
-        TreeNode rslt = lowestCommonAncestor(root, root.left, root.right);
+        TreeNode rslt = lowestCommonAncestor(root, root.left.left, root.left.right.right);
         System.out.println("rslt.val = " + rslt.val);
 
     }

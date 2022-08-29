@@ -37,6 +37,8 @@ public class CourseSchedule {
             nextCourse.inDegrees++;
         }
 
+        System.out.println("graph : " + graph.toString());
+
         int totalDeps = prerequisites.length;
         LinkedList<Integer> nodepCourses = new LinkedList<>();
         for (Map.Entry<Integer, GNode> map : graph.entrySet()) {

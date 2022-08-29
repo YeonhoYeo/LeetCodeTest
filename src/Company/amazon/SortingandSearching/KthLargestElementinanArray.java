@@ -1,5 +1,7 @@
 package Company.amazon.SortingandSearching;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.PriorityQueue;
 
 public class KthLargestElementinanArray {
@@ -23,5 +25,23 @@ public class KthLargestElementinanArray {
             }
         }
         return priorityQueue.poll();
+    }
+
+    public boolean canConstruct(String ransomNote, String magazine) {
+
+        HashMap<Character, Integer> dictMap = new HashMap();
+        for (char c : ransomNote.toCharArray()){
+            dictMap.put(c, dictMap.getOrDefault(c, 0) + 1);
+        }
+
+
+
+        for (char c : magazine.toCharArray()){
+            if (dictMap.containsKey(c)) {
+                dictMap.put(c, dictMap.get(c) - 1);
+            }
+        }
+
+        return true;
     }
 }

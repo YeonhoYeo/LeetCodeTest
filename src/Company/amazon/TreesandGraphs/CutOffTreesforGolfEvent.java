@@ -40,7 +40,7 @@ public class CutOffTreesforGolfEvent {
                         forest.get(nr).get(nc) > 0) {
                     int ncost = g + 1 + Math.abs(nr - targetRow) + Math.abs(nc - targetRow);
                     System.out.println("ncost = " + ncost);
-                    if (ncost < cost.getOrDefault(nr * colSize + nc, 9999)) {
+                    if (ncost < cost.getOrDefault(nr * colSize + nc, rowSize * colSize)) {
                         cost.put(nr * colSize + nc, ncost);
                         heap.offer(new int[]{ncost, g + 1, nr, nc});
                     }
